@@ -1,0 +1,28 @@
+@import './modules/reset';
+@import './modules/colors';
+
+body {
+  font-family: arial;
+  background: $background;
+  padding: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.body {
+  width: 500px;
+  padding: 20px;
+  background: $backgroundContent;
+  border: 1px solid $border;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+}

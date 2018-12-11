@@ -1,0 +1,7 @@
+@import './modules/colors';
+
+.error {
+  color: $error;
+  text-align: center;
+  font-weight: bold;
+}
