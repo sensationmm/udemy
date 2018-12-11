@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/controllers/authController.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">server/controllers</a> authController.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import kue from 'kue';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import config from '../config';
+import models from '../database/models';
+import { updateUserAttributes } from '../helpers';
+&nbsp;
+import redisConfig from '../config/redis';
+&nbsp;
+/**
+ * Controls endpoints for authentication
+ * @class AuthController
+ */
+export default class AuthController {
+  /**
+  * Register a new user
+  *
+  * @param {object} req express request object
+  * @param {object} res express response object
+  *
+  * @returns {object} newly created user
+  */
+<span class="fstat-no" title="function not covered" >  as</span>ync signup(req, res) {
+    const user = <span class="cstat-no" title="statement not covered" >await models.User.create({</span>
+      name: req.body.name,
+      email: req.body.email,
+      password: await bcrypt.hash(req.body.password, process.env.NODE_ENV === 'production' ? 10 : 1)
+    });
+    const queue = <span class="cstat-no" title="statement not covered" >kue.createQueue(process.env.NODE_ENV === 'production' ? redisConfig.production : {});</span>
+&nbsp;
+    //  Register a new mails job to the queue
+<span class="cstat-no" title="statement not covered" >    queue.create('mails', {</span>
+      recipient: user.get(),
+      message: {
+        subject: 'Welcome to Bahdcoder More-recipes'
+      },
+      template: {
+        pug: 'welcome',
+        locals: { name: user.name }
+      }
+    }).events(false).save();
+&nbsp;
+    const accessToken = <span class="cstat-no" title="statement not covered" >jwt.sign({ email: user.email }, config.JWT_SECRET);</span>
+&nbsp;
+    const updatedUser = <span class="cstat-no" title="statement not covered" >await updateUserAttributes(user, models);</span>
+<span class="cstat-no" title="statement not covered" >    return res.sendSuccessResponse({ user: updatedUser, access_token: accessToken });</span>
+  }
+&nbsp;
+&nbsp;
+  /**
+   * Sign in a user
+   * @param {object} req express request object
+   * @param {object} res express response object
+   *
+   * @returns {object} json with user access_token
+   */
+<span class="fstat-no" title="function not covered" >  as</span>ync signin(req, res) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const user = <span class="cstat-no" title="statement not covered" >await models.User.findOne({ where: { email: req.body.email } });</span>
+<span class="cstat-no" title="statement not covered" >      if (user) {</span>
+        const isCorrectPassword = <span class="cstat-no" title="statement not covered" >await bcrypt.compare(req.body.password, user.password);</span>
+<span class="cstat-no" title="statement not covered" >        if (isCorrectPassword) {</span>
+          const accessToken = <span class="cstat-no" title="statement not covered" >jwt.sign({ email: user.email }, config.JWT_SECRET);</span>
+          const updatedUser = <span class="cstat-no" title="statement not covered" >await updateUserAttributes(user, models);</span>
+<span class="cstat-no" title="statement not covered" >          return res.sendSuccessResponse({ user: updatedUser, access_token: accessToken });</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        throw new Error('The passwords did not match.');</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      throw new Error('No user was found.');</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      return res.sendFailureResponse({ errors: 'These credentials do not match our records.' }, 422);</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Nov 12 2018 15:56:30 GMT+0000 (Greenwich Mean Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
