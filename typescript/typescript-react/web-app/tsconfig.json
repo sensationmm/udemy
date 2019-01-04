@@ -1,0 +1,12 @@
+﻿{
+    "compilerOptions": {
+        "target":  "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "jsx": "react",
+        "strict": true,
+        "noImplicitReturns": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true
+    }
+}

@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ListPage from './components/ListPage';
+
+import { QueryRenderer, graphql } from 'react-relay';
+import environment from './Environment';
+
+const AppAllPostsQuery = graphql`
+  query AppAllPostsQuery($count: Int!, $after: String) {
+    viewer {
+      ...ListPage_viewer
+    }
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
-    );
+      <QueryRenderer
+        environment={environment}
+        query={AppAllPostsQuery}
+        variables={{ count: 3 }}
+        render={({ error, props }) => {
+          if(error) {
+            return <div>{error}</div>
+          } else if(props) {
+            return <ListPage viewer={props.viewer} />;
+          }
+          return <div>Loading</div>
+        }}
+      />
+    )
   }
 }
 

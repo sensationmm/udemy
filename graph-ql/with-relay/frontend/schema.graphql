@@ -1,0 +1,111 @@
+input CreatePostInput {
+  title: String!
+  content: String!
+  userId: String!
+  clientMutationId: String
+}
+
+type CreatePostPayload {
+  post: Post
+  clientMutationId: String
+}
+
+input CreateUserInput {
+  username: String!
+  password: String!
+  fullname: String!
+  clientMutationId: String
+}
+
+type CreateUserPayload {
+  message: String
+  clientMutationId: String
+}
+
+input LoginUserInput {
+  username: String!
+  password: String!
+  clientMutationId: String
+}
+
+type LoginUserPayload {
+  user: User
+  clientMutationId: String
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): CreatePostPayload
+  createUser(input: CreateUserInput!): CreateUserPayload
+  loginUser(input: LoginUserInput!): LoginUserPayload
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Post implements Node {
+  """The ID of an object"""
+  id: ID!
+  title: String
+  content: ID
+  author: User
+}
+
+"""A connection to a list of items."""
+type PostConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [PostEdge]
+}
+
+"""An edge in a connection."""
+type PostEdge {
+  """The item at the end of the edge"""
+  node: Post
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+type Query {
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+  viewer: Viewer!
+}
+
+type User implements Node {
+  """The ID of an object"""
+  id: ID!
+  username: String
+  password: String
+  fullname: String
+}
+
+type Viewer {
+  allPosts(after: String, first: Int, before: String, last: Int, order: String): PostConnection!
+  User(id: ID, username: String): User
+  id: ID!
+}
+

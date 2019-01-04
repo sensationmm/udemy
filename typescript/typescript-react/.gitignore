@@ -1,0 +1,12 @@
+/server-app/dist
+/server-app/node_modules
+/web-app/bower_components
+/web-app/dist
+/web-app/node_modules
+/web-app/temp
+/.vs
+/*.sln
+/web-app/*.njsproj
+/web-app/web-app.njsproj.user
+/server-app/*.njsproj
+/server-app/*.user

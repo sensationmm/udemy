@@ -8,6 +8,9 @@ const {
 const { globalIdField, connectionDefinitions } = require('graphql-relay');
 const { nodeInterface } = require('../interface/Node');
 
+const { User } = require('./User');
+const PostModel = require('../models/Post');
+
 const Post = new GraphQLObjectType({
   name: 'Post',
   interfaces: [nodeInterface],
@@ -21,6 +24,10 @@ const Post = new GraphQLObjectType({
       type: GraphQLID,
       resolve: post => post.content
     },
+    author: {
+      type: User,
+      resolve: post => PostModel.getPostAuthor(post.id)
+    }
   }
 });
 

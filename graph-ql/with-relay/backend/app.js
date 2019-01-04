@@ -2,6 +2,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const { GraphQLSchema } = require('graphql');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const Post = require('./src/types/Post');
 const Query = require('./src/types/Query');
@@ -13,6 +14,7 @@ const schema = new GraphQLSchema({
 })
 
 const app = express();
+app.use(cors());
 
 const MONGO_URI = 'mongodb://kevin:asprilla1@ds119150.mlab.com:19150/with-relay'
 mongoose.Promise = global.Promise;
